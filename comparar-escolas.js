@@ -70,7 +70,25 @@ fecharEscola()
 
 /* ===== RELATÓRIO DE COMPARAÇÃO ===== */
 
+const compararEscolas = (eA, eB) => {
+  console.log(`> Comparando oferta de cursos: ${eA.cidade} vs ${eB.cidade}...`);
+
+  if (eA.qtdeCursos > eB.qtdeCursos) {
+      console.log(`Resultado: O SENAI ${eA.cidade} possui mais cursos`);
+  } else if (eB.qtdeCursos > eA.qtdeCursos){
+      console.log(`Resultado: O SENAI ${eB.cidade} possui mais cursos.`);
+  } else {
+      console.log(`Resultado: Ambas as unidades possuem a mesma quantidade de cursos.`);
+  }
+  console.log(`Status: ${eA.cidade} (${eA.qtdeCursos}) | ${eB.cidade} (${eB.qtdeCursos})\n`);
+}
+
 
 /* ===== NOVA CONSULTA ===== */
+
+function limparCampos() {
+  document.getElementById('').reset();
+  document.getElementById('resultText').textContent = 'Preencha os campos".';
+}
 
 
