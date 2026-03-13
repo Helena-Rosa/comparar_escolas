@@ -20,6 +20,9 @@ class Senai {
   fecharEscola() {
     this.statusFuncionamento = false;
   }
+
+  
+
 }
 
 /* 🚨NÃO ALTERAR A CLASSE 🚨 */
@@ -32,41 +35,93 @@ class Senai {
 
 /* ===== OBTER ELEMENTOS ===== */
 
-const cidade = document.getElementById('cidade')
-const coigo = document.getElementById('codigo')
-const ano_construcao = document.getElementById('ano de construção')
-const qtdeCursos = document.getElementById('quantidade de cursos');
+const cidadeA = document.querySelector('.unidadeA__cidade')
+const codigoA = document.querySelector('.unidadeA__codigo')
+const ano_construcaoA = document.querySelector('.unidadeA__ano_de_construção')
+const qtdeCursosA = document.querySelector('.unidadeA__quantidade_de_cursos')
+
+
+const cidadeB = document.querySelector('.unidadeB__cidade')
+const codigoB = document.querySelector('.unidadeB__codigo')
+const ano_construcaoB = document.querySelector('.unidadeB__ano_de_construção')
+const qtdeCursosB = document.querySelector('.unidadeB__quantidade_de_cursos')
+
+
+
+const botao_intanciarA = document.querySelector('.unidadeA__instanciar')
+const botao_intanciarB = document.querySelector('.unidadeB__instanciar')
+
+
+
+if (cidadeA.value === "" || codigoA.value === "" || ano_construcaoA.value === "" || qtdeCursosA.value === "" )
+    textContent = "Preencha o espaço"
+
+
+ (cidadeB.value === "" || codigoB.value === "" || ano_construcaoB.value === "" || qtdeCursosB.value === "" )
+  textContent = "Preencha o espaço"
+
 
 
 
 /* ===== FUNÇÃO DE VALIDAÇÃO ===== */
 
 
+
+
 /* ===== INSTANCIAR ESCOLA A ===== */
 
-const escolaA = new Senai(603, 'Araraquara', 1968, 450);
-
+ escolaA = new Senai (
+    cidadeA.value,
+    codigoA.value,
+    ano_construcaoA.value,
+    qtdeCursosA.value
+  
+ );
 
 /* ===== INSTANCIAR ESCOLA B ===== */
+ escolaB = new Senai (
+  cidadeB.value,
+  codigoB.value,
+  ano_construcaoB.value,
+  qtdeCursosB.value
 
-const escolaB = new Senai(13, 'Matão', 1700, 15);
+ );
 
 
 
 /* ===== ABRIR ESCOLA ===== */
 
-abrirEscola() 
-  statusFuncionamento = true;
-  console.log(`O SENAI ${this.cidade} está aberto.`);
-  
+if (escolaA) {
+  escolaA.abrirEscola()
+return ("A escola está aberta")
+
+}
+
+
+if (escolaB) {
+  escolaB.abrirEscola()
+return ("A escola está aberta")
+
+}
 
 /* ===== FECHAR ESCOLA ===== */
 
-fecharEscola()
-  statusFuncionamento = false;
-  console.log(`O SENAI ${this.cidade} está fechado.`)
-  
+if (escolaA) {
+  escolaA.FecharEscola()
+return ("A escola está fechada")
 
+}
+
+
+if (escolaB) {
+  escolaB.fecharEscola()
+return ("A escola está fechada")
+
+}
+
+
+
+  
 
 /* ===== RELATÓRIO DE COMPARAÇÃO ===== */
 
